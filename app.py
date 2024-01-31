@@ -34,7 +34,7 @@ JOBS = [
 
 @app.route("/") # the route, or the empty route that lands us to the homepage
 def hello_template():
-    return render_template('home.html', jobs=JOBS, company_name='Flask Careers')
+    return render_template('home.html', jobs=JOBS, company_name='Fluskë')
 
 @app.route("/api/jobs")
 def list_jobs():

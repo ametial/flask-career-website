@@ -1,14 +1,20 @@
-<!-- jobitem.html -->
-
-<div class="border-bottom row mb-4 align-items-center">
-  <div class="col-9">
-    <h4 style="color: rgb(420, 170, 120); margin-bottom: 8px;">{{ job['title'] }}</h4>
-    <div class="mb-2">Location: {{ job['location'] }}</div>
+<div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px;">
+  <div class="col-10">
+    <h4 
+      style="color:rgb(120,120,120); margin-bottom:4px;">
+      {{job['title']}}
+    </h4>
+    <div>
+      <b>Location:</b> {{job['location']}}
+    </div>
     {% if 'salary' in job %}
-      <div>Salary: {{ job['salary'] }}</div>
+    <div>
+      <b>Salary:</b> {{job['salary']}}
+    </div>
     {% endif %}
   </div>
-  <div class="col-3">
-    <button type="button" class="btn btn-outline-primary align-middle">Apply</button>
+  <div class="col-2 padding-right:16px">
+    <a href="mailto:abdul@ameti.cloud" type="button" class="btn btn-outline-primary float-right align-middle" >Apply</a>
   </div>
+  
 </div>
