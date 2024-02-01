@@ -37,6 +37,16 @@ files = [
 ]
 
 [[package]]
+name = "decouple"
+version = "0.0.7"
+description = "Decoupling logic"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "decouple-0.0.7.tar.gz", hash = "sha256:c253c1cc62b76e9720a066f334552548c6de1884bc3bdf456ddb62d61b867b09"},
+]
+
+[[package]]
 name = "flask"
 version = "3.0.1"
 description = "A simple framework for building complex web applications."
@@ -344,4 +354,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "8338c62028dfe11051cb56124fd98e5e4d0572d801c4c3daa821e0bfbc26581e"
+content-hash = "ba4237fe05ce0b5c0900f2732c9207845b0f74c873a9055f04eb46ebc1880dad"

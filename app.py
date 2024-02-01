@@ -1,47 +1,30 @@
 from flask import Flask, render_template, jsonify
+from database import engine
+from sqlalchemy import text
 
 app = Flask(__name__)
 
-JOBS = [
-  {
-    'id': 1,
-    'title': 'Data Analyst',
-    'location': 'Berlin, Germany',
-    'salary': '€60.000'
-  },
-  
-  {
-    'id': 2,
-    'title': 'Software Engineer',
-    'location': 'Berlin, Germany or Remote',
-    'salary': '€60.000'
-  },
-  
-  {  
-  'id': 3,
-  'title': 'Cyber Security Engineer',
-  'location': 'Berlin, Germany or Remote',
-  'salary': '€60.000'
-  },
+def load_jobs_from_db():
+  with engine.connect() as conn:
+      result = conn.execute(text("SELECT * FROM jobs"))
+      jobs = []
+      for row in result.fetchall():
+          job_dict = {}
+          for column, value in zip(result.keys(), row):
+              job_dict[column] = value
+          jobs.append(job_dict)
+      return jobs
 
-  {  
-  'id': 4,
-  'title': 'Cyber Security Engineer',
-  'location': 'Berlin, Germany or Remote'
-  }
 
-]
-
-@app.route("/") # the route, or the empty route that lands us to the homepage
+@app.route("/")
 def hello_template():
-    return render_template('home.html', jobs=JOBS, company_name='Fluskë')
+    jobs = load_jobs_from_db()
+    return render_template('home.html', jobs=jobs, company_name='Fluskë')
 
 @app.route("/api/jobs")
 def list_jobs():
-  return jsonify(JOBS)
-  
-print(__name__)
+    jobs = load_jobs_from_db()  # Call the function to load jobs from the database
+    return jsonify(jobs)
+
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080, debug=True)
-
-
+    app.run(host='0.0.0.0', port=8080, debug=True)
