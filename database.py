@@ -1,5 +1,18 @@
 from sqlalchemy import create_engine, text
 import os
+from database import load_jobs_from_db
+
+
+def load_jobs_from_db():
+  with engine.connect() as conn:
+      result = conn.execute(text("SELECT * FROM jobs"))
+      jobs = []
+      for row in result.fetchall():
+          job_dict = {}
+          for column, value in zip(result.keys(), row):
+              job_dict[column] = value
+          jobs.append(job_dict)
+      return jobs
 
 # Use os.environ to access environment variables
 db_config = {

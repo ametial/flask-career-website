@@ -4,17 +4,6 @@ from sqlalchemy import text
 
 app = Flask(__name__)
 
-def load_jobs_from_db():
-  with engine.connect() as conn:
-      result = conn.execute(text("SELECT * FROM jobs"))
-      jobs = []
-      for row in result.fetchall():
-          job_dict = {}
-          for column, value in zip(result.keys(), row):
-              job_dict[column] = value
-          jobs.append(job_dict)
-      return jobs
-
 
 @app.route("/")
 def hello_template():
