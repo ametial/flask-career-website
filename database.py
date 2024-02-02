@@ -1,7 +1,5 @@
 from sqlalchemy import create_engine, text
 import os
-from database import load_jobs_from_db
-
 
 def load_jobs_from_db():
   with engine.connect() as conn:
