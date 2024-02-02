@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{job.title}} Flluskë Careers</title>
+    {% include 'bootstrap.html' %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+   <body>
+     {% include 'nav.html' %}
+      {% include 'banner.html' %}
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
+      }
+    </style>
+
+     <div class="container">
+     <h1 class="text-center mt-2 mb-4">
+       Flluskë Careers
+     </h1>
+ 
+      <h3>Title</h3>
+        <p>{{job.title}}</p>
+      <h3>Location</h3>
+        <p>{{job.location}}</p>
+      <h3>Salary</h3>
+        <p><p>{{ job.salary }} {{ job.currency }}</p>
+      <h3>Responsibilities</h3>
+       <ul>
+         {% for line in job.responsibilities.split("\n") %}
+           <li>{{line}}</li>
+         {% endfor %}
+       </ul>
+        <p>{{job.responsibilities}}</p>
+       <h3>Requirements</h3>
+        <p>{{job.requirements}}</p>
+      {% include 'applicationform.html' %}
+     </div>
+
+     
+      {% include 'footer.html' %}
+      
+    </body>

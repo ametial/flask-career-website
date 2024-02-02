@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fluskë Careers</title>
+    <title>Flluskë Careers</title>
+    {% include 'bootstrap.html' %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -16,15 +17,15 @@
   </head>
   <body>
     {% include 'nav.html' %}
-    <img class="img-fluid" id="banner" src="/static/banner.jpg">
+   {% include 'banner.html' %}
     <div class="container">
       <h1 class="text-center mt-2 mb-4">
-        {{company_name}} Careers
+        Flluskë Careers
       </h1>
       <div class="row" style="margin-bottom:32px">
         <div class="col-md-6">
       <p class="lead">
-        At Fluskë, we’re on a mission to build the most highly reputed technical university in the world, and we’re building it completely online. Our flagship data science program helps working professionals with a background in programming or analytics make a career transition to data science. We also offer several free beginner-friendly courses and have a fast-growing community of 200,000+ users.
+        At Flluskë, we’re on a mission to build the most highly reputed technical university in the world, and we’re building it completely online. Our flagship data science program helps working professionals with a background in programming or analytics make a career transition to data science. We also offer several free beginner-friendly courses and have a fast-growing community of 200,000+ users.
       </p>
         </div>
         <div class="d-none d-md-block col-md-6">
