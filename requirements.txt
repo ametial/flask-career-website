@@ -1,2 +1,3 @@
 Flask
 gunicorn #guniocrn is a production server for python - equivalent of nodejs 
+sqlalchemy
