@@ -1,4 +1,4 @@
-```markdown
+
 # Flask Career Website
 
 ## Overview
@@ -52,5 +52,5 @@ This project is licensed under the MIT License.
 - Unit and Integration Tests
 - Docker Integration
 - CI/CD Pipeline
-``` 
+
 
