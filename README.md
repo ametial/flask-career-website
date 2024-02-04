@@ -54,4 +54,3 @@ This project is licensed under the MIT License.
 - CI/CD Pipeline
 ``` 
 
-You can copy and paste this content directly into your README.md file on GitHub.
