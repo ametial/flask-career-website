@@ -56,9 +56,6 @@ def load_job_from_db(id):
               job_dict[column] = value
           return job_dict
 
-from sqlalchemy import text
-from sqlalchemy.exc import SQLAlchemyError
-
 def add_application_to_db(job_id, application):
   query = """
   INSERT INTO applications (job_id, fullname, email, linkedin_url, education, work_experience, resume_url)
